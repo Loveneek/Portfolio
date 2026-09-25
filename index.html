@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loveneek Singh — Portfolio</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307070f'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial' font-size='24' font-weight='700' fill='%23ff6b6b'%3ELS%3C/text%3E%3C/svg%3E" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -20,6 +21,7 @@
       --gradient1: linear-gradient(135deg, #ff6b6b, #fd79a8);
       --gradient2: linear-gradient(135deg, #4ecdc4, #a29bfe);
       --gradient3: linear-gradient(135deg, #ffe66d, #4ecdc4);
+      --max: 1100px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -227,7 +229,7 @@
     }
 
     /* ── SECTIONS ── */
-    section { padding: 7rem 3rem; max-width: 1100px; margin: 0 auto; }
+    section { padding: 7rem 3rem; max-width: var(--max); margin: 0 auto; }
 
     .section-divider {
       width: 100%;
@@ -248,7 +250,7 @@
       background: var(--gradient2);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      white-space: nowrap;
+      overflow-wrap: anywhere;
     }
     .section-line {
       flex: 1;
@@ -370,6 +372,81 @@
     .skill-group:nth-child(3) .skill-tag:hover { border-color: var(--accent3); color: var(--accent3); }
     .skill-group:nth-child(4) .skill-tag:hover { border-color: var(--accent4); color: var(--accent4); }
 
+    /* ── INDEX / ASSIGNMENT STRUCTURE ── */
+    .section-kicker {
+      font-family: 'DM Mono', monospace;
+      color: var(--accent1);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .index-grid, .goal-grid, .reflection-grid, .competency-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.1rem;
+    }
+    .index-card, .goal-card, .reflection-card, .resume-card, .competency-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.84rem;
+      line-height: 1.7;
+      position: relative;
+      overflow: hidden;
+    }
+    .index-card {
+      display: block;
+      min-height: 150px;
+      text-decoration: none;
+      transition: transform 0.3s, border-color 0.3s, color 0.3s;
+    }
+    .index-card:hover {
+      color: var(--text);
+      transform: translateY(-4px);
+      border-color: rgba(78,205,196,0.35);
+    }
+    .index-card span, .goal-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: rgba(78,205,196,0.1);
+      color: var(--accent2);
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      margin-bottom: 0.9rem;
+    }
+    .index-card strong, .goal-card strong, .reflection-card strong, .resume-card strong, .competency-card strong {
+      display: block;
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.25;
+      margin-bottom: 0.45rem;
+    }
+    .resume-card {
+      margin-top: 1.4rem;
+      border-left: 3px solid var(--accent2);
+    }
+    .reflection-card {
+      border-left: 3px solid var(--accent1);
+    }
+    .reflection-card p + p, .goal-card p + p {
+      margin-top: 0.85rem;
+    }
+    .competency-grid {
+      margin-top: 1.2rem;
+    }
+    .competency-card {
+      min-height: 120px;
+    }
+
     /* ── PROJECTS ── */
     .projects-grid { display: grid; gap: 1.75rem; }
 
@@ -442,6 +519,27 @@
     .project-card:nth-child(2) .tech-badge { color: var(--accent2); border-color: rgba(78,205,196,0.25); background: rgba(78,205,196,0.07); }
     .project-card:nth-child(3) .tech-badge { color: var(--accent3); border-color: rgba(255,230,109,0.25); background: rgba(255,230,109,0.07); }
     .project-card:nth-child(4) .tech-badge { color: var(--accent4); border-color: rgba(162,155,254,0.25); background: rgba(162,155,254,0.07); }
+    .competency-badge {
+      color: var(--accent2);
+      border-color: rgba(78,205,196,0.28);
+      background: rgba(78,205,196,0.08);
+    }
+    .artifact-reflection {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-left: 3px solid var(--accent3);
+      border-radius: 10px;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      line-height: 1.7;
+      background: rgba(255,255,255,0.025);
+    }
+    .artifact-reflection strong {
+      color: var(--accent3);
+      font-family: 'Syne', sans-serif;
+    }
 
     .project-link {
       display: inline-flex; align-items: center; gap: 0.4rem;
@@ -563,16 +661,16 @@
     }
 
     .reveal {
-      opacity: 0;
-      transform: translateY(36px);
+      opacity: 1;
+      transform: none;
       transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
                   transform 0.8s cubic-bezier(0.22,1,0.36,1);
     }
     .reveal.visible { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
 
-    .reveal.from-left  { transform: translateX(-40px); }
-    .reveal.from-right { transform: translateX(40px); }
-    .reveal.scale-in   { transform: scale(0.92); }
+    .reveal.from-left,
+    .reveal.from-right,
+    .reveal.scale-in { transform: none; }
 
     .delay-1 { transition-delay: 0.12s; }
     .delay-2 { transition-delay: 0.22s; }
@@ -581,12 +679,22 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
+      nav { padding: 0.85rem 1rem; align-items: flex-start; gap: 0.8rem; flex-direction: column; }
+      .nav-links {
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+        overflow-x: auto;
+        padding-bottom: 0.2rem;
+        -webkit-overflow-scrolling: touch;
+      }
+      .nav-links a { white-space: nowrap; font-size: 0.68rem; }
+      h1.hero-name { font-size: clamp(2.4rem, 16vw, 4rem); letter-spacing: -0.02em; overflow-wrap: anywhere; }
       section { padding: 4rem 1.5rem; }
-      #hero { padding: 6rem 1.5rem 3rem; }
+      #hero { padding: 8rem 1.5rem 3rem; min-height: 92vh; }
       .about-grid, .edu-grid { grid-template-columns: 1fr; }
       .project-card { grid-template-columns: 1fr; }
+      .project-link { width: max-content; max-width: 100%; white-space: normal; }
     }
   </style>
 </head>
@@ -597,27 +705,31 @@
   <nav>
     <div class="nav-logo">Loveneek Singh</div>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
+      <li><a href="#index">Index</a></li>
+      <li><a href="#about">About Me</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#projects">Artifacts</a></li>
+      <li><a href="#reflections">Reflections</a></li>
+      <li><a href="#competencies">Competencies</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <section id="hero">
     <div class="hero-content">
-      <div class="hero-tag">Available for 2026 Internships</div>
+      <div class="hero-tag">COOP 2100 ePortfolio | Fall 2026</div>
       <h1 class="hero-name">
         <span class="name-color">Loveneek</span><br>Singh
       </h1>
-      <p class="hero-sub">Software Engineering Student &amp; <span>AI Enthusiast</span></p>
+      <p class="hero-sub">Software Engineering Student &amp; <span>Co-op Candidate</span></p>
       <p class="hero-desc">
-        Specializing in Java Spring Boot, Next.js, and AI Integration. Currently building scalable full-stack applications and mentoring the next generation of engineers at York University.
+        This ePortfolio connects my technical work, career goals, workplace experience, and reflective learning as I prepare for co-op and future engineering practice.
       </p>
       <div class="hero-ctas">
-        <a href="#projects" class="btn btn-primary">View Projects ↓</a>
-        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        <a href="#index" class="btn btn-primary">View Portfolio Index ↓</a>
+        <a href="#projects" class="btn btn-ghost">Course Artifacts</a>
         <a href="https://github.com/Loveneek" target="_blank" class="btn btn-ghost">GitHub ↗</a>
       </div>
     </div>
@@ -629,16 +741,53 @@
 
   <div class="section-divider"></div>
 
+  <section id="index">
+    <div class="section-header reveal from-left">
+      <h2 class="section-title">Portfolio Index</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-kicker reveal delay-1">Required COOP 2100 navigation</p>
+    <div class="index-grid">
+      <a class="index-card reveal delay-1" href="#about">
+        <span>A</span>
+        <strong>About Me</strong>
+        Professional biography, program, career direction, and professional links.
+      </a>
+      <a class="index-card reveal delay-2" href="#career">
+        <span>B</span>
+        <strong>Career</strong>
+        Education, paid and volunteer experience, technical skills, and resume snapshot.
+      </a>
+      <a class="index-card reveal delay-3" href="#goals">
+        <span>C</span>
+        <strong>Goals and Portfolios</strong>
+        Discover Myself, interests and skills, values and personality, and credentials.
+      </a>
+      <a class="index-card reveal delay-4" href="#reflections">
+        <span>D</span>
+        <strong>Reflections</strong>
+        Retell, Relate, Reflect entries showing professional growth.
+      </a>
+      <a class="index-card reveal delay-1" href="#projects">
+        <span>E</span>
+        <strong>Course Projects</strong>
+        Selected artifacts tagged with Lassonde undergraduate competencies.
+      </a>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
   <section id="about">
     <div class="section-header reveal from-left">
-      <h2 class="section-title">About</h2>
+      <h2 class="section-title">About Me</h2>
       <div class="section-line"></div>
     </div>
     <div class="about-grid">
       <div class="about-text reveal from-left delay-1">
-        <p>I'm a <strong>Software Engineering (Big Data) student at York University</strong>. I bridge the gap between complex backend architectures and intuitive AI-driven user experiences.</p>
-        <p>Currently working as a <strong>Technical Support Specialist at Standard Broadband</strong>, where I manage DNS infrastructure and Linux systems. I also serve as a <strong>Peer Mentor at the Lassonde School of Engineering</strong>, providing technical guidance in Java and Data Structures to 30+ first-year students.</p>
-        <p>I love tackling complex architectural challenges — whether that's an <strong>AI-powered Virtual Wardrobe using Spring Boot</strong>, or a layered scheduling application with <strong>800+ unit tests</strong> designed for enterprise-grade reliability.</p>
+        <p>I'm a <strong>Software Engineering (Big Data) student at York University</strong> with an expected graduation date of 2027. My academic and career interests sit at the intersection of backend architecture, AI integration, reliable systems, and practical user experience.</p>
+        <p>Currently, I'm on an <strong>Infrastructure Application Support Developer Co-op at FGF Brands</strong>, supporting business-critical applications built on ASP.NET, C#, and SQL Server. Previously, I built ETL pipelines and IoT dashboards as a <strong>Data Analyst Intern at Hydroficient</strong>, spent four years as an <strong>IT Support Specialist at Internet Access Solutions Ltd.</strong> managing DNS, network, and VOIP infrastructure, and served as a <strong>Peer Mentor at the Lassonde School of Engineering</strong>, providing technical guidance in Java and Data Structures to 30+ first-year students.</p>
+        <p>My co-op goal is to contribute to software engineering teams where I can keep developing technical depth, professional communication, and disciplined problem solving. This portfolio collects the evidence behind that goal: projects, experience, skills, reflections, and competency-tagged artifacts.</p>
       </div>
       <div class="about-stats">
         <div class="stat-card reveal scale-in">
@@ -658,6 +807,135 @@
           <div class="stat-label">Expected graduation</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section id="experience">
+    <div class="section-header reveal from-left">
+      <h2 class="section-title">Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="exp-timeline">
+      <div class="exp-item reveal delay-1">
+        <div class="exp-dot" style="background: var(--accent4); box-shadow: 0 0 16px var(--accent4);"></div>
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Infrastructure Application Support Developer Co-op</div>
+            <div class="exp-company">FGF Brands</div>
+          </div>
+          <div class="exp-date">Sep 2026 — Present</div>
+        </div>
+        <ul class="exp-list">
+          <li>Supporting and maintaining 50+ business-critical in-house applications spanning supply chain and manufacturing logistics, built on ASP.NET (Web Forms/MVC), C#, and Microsoft SQL Server.</li>
+          <li>Diagnosing and resolving production bugs, and developing new features based on evolving business requirements, gaining hands-on experience in the full application support lifecycle.</li>
+          <li>Managing and resolving support tickets through the ticketing system, strengthening incident triage and stakeholder communication skills.</li>
+          <li>Working on-site in a cross-functional environment at a large-scale manufacturing company, collaborating with engineering and infrastructure teams on systems that directly support day-to-day operations.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item reveal delay-1" style="margin-top: 3rem;">
+        <div class="exp-dot" style="background: var(--accent3); box-shadow: 0 0 16px var(--accent3);"></div>
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Data Analyst Intern — ETL &amp; Dashboard Development</div>
+            <div class="exp-company">Hydroficient Systems Ltd.</div>
+          </div>
+          <div class="exp-date">May 2026 — Aug 2026</div>
+        </div>
+        <ul class="exp-list">
+          <li>Took full ownership of analytics and dashboard development for Hydroficient's IoT sensor data platform, from raw data to final visualization.</li>
+          <li>Built ETL pipelines using Python and SQL to ingest and process IoT sensor telemetry data, and developed outlier detection methods to flag anomalies in sensor readings.</li>
+          <li>Designed and deployed interactive dashboards using Next.js and Vercel, giving stakeholders real-time visibility into sensor performance and trends.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item reveal delay-1" style="margin-top: 3rem;">
+        <div class="exp-dot" style="background: var(--accent2); box-shadow: 0 0 16px var(--accent2);"></div>
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Peer Mentor</div>
+            <div class="exp-company">Lassonde School of Engineering</div>
+          </div>
+          <div class="exp-date">Sep 2024 — Apr 2025</div>
+        </div>
+        <ul class="exp-list">
+          <li>Facilitated technical guidance for 30+ first-year students in Java and Data Structures.</li>
+          <li>Developed supplemental study materials to simplify complex algorithmic logic.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item reveal delay-2" style="margin-top: 3rem;">
+        <div class="exp-dot"></div>
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">IT Support Specialist</div>
+            <div class="exp-company">Internet Access Solutions Ltd.</div>
+          </div>
+          <div class="exp-date">May 2022 — Apr 2026</div>
+        </div>
+        <ul class="exp-list">
+          <li>Managed DNS records and resolved email and network/routing issues for hosted customer domains, providing front-line technical support via phone, email, and ticketing system.</li>
+          <li>Maintained the VOIP network, including Hosted PBX, customer premise phone systems, and phone line gateways.</li>
+          <li>Provisioned hardware and built network links for new and upgrading customers, and maintained backup systems across all devices and nodes.</li>
+          <li>Monitored infrastructure proactively, diagnosed hardware/software/network issues, and maintained documentation on network and support processes.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section id="education">
+    <div class="section-header reveal from-left">
+      <h2 class="section-title">Education</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal scale-in">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-degree">Bachelor of Engineering (Big Data)</div>
+        <div class="edu-school">York University · North York, ON</div>
+        <div class="edu-year">2023 — 2027 (Expected)</div>
+      </div>
+      <div class="edu-card reveal scale-in delay-2">
+        <div class="edu-icon">🖥️</div>
+        <div class="edu-degree">Computer System Technician</div>
+        <div class="edu-school">St. Clair College · Windsor, ON</div>
+        <div class="edu-year">2018 — 2019</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section id="career">
+    <div class="section-header reveal from-left">
+      <h2 class="section-title">Career</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-kicker reveal delay-1">Education, experience, skills, and resume</p>
+    <div class="index-grid">
+      <div class="index-card reveal delay-1">
+        <span>01</span>
+        <strong>Education History</strong>
+        Bachelor of Engineering in Software Engineering (Big Data), York University, 2023 to 2027 expected. Computer System Technician, St. Clair College, 2018 to 2019.
+      </div>
+      <div class="index-card reveal delay-2">
+        <span>02</span>
+        <strong>Experience Record</strong>
+        Infrastructure Application Support Developer Co-op at FGF Brands (current), Data Analyst Intern at Hydroficient, IT Support Specialist at Internet Access Solutions Ltd., and Peer Mentor at Lassonde School of Engineering. Together these span application support, analytics and dashboard development, infrastructure/network support, and technical mentoring.
+      </div>
+      <div class="index-card reveal delay-3">
+        <span>03</span>
+        <strong>Career Direction</strong>
+        Seeking 2026 software engineering internship and co-op opportunities focused on backend systems, full-stack development, AI integration, infrastructure, and engineering reliability.
+      </div>
+    </div>
+    <div class="resume-card reveal delay-4">
+      <strong>Resume Snapshot</strong>
+      Current resume focus: Java Spring Boot, Next.js/React, AI API integration, Linux systems, DNS management, testing, clean architecture, mentoring, and technical communication. Add a downloadable resume PDF here before final submission if your course site platform supports file uploads.
     </div>
   </section>
 
@@ -707,9 +985,41 @@
 
   <div class="section-divider"></div>
 
+  <section id="goals">
+    <div class="section-header reveal from-left">
+      <h2 class="section-title">Goals and Portfolios</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-kicker reveal delay-1">Goal: Discover Myself</p>
+    <div class="goal-grid">
+      <div class="goal-card reveal delay-1">
+        <span class="goal-num">01</span>
+        <strong>Dreams and Goals</strong>
+        <p>I chose software engineering because I enjoy turning abstract problems into working systems. My current career goal is to gain co-op experience where I can contribute to production-quality software while learning from experienced engineers.</p>
+      </div>
+      <div class="goal-card reveal delay-2">
+        <span class="goal-num">02</span>
+        <strong>Interests and Skills</strong>
+        <p>My strongest interests are backend development, system design, AI integration, testing, and infrastructure. I am continuing to build stronger front-end polish and clearer technical documentation.</p>
+      </div>
+      <div class="goal-card reveal delay-3">
+        <span class="goal-num">03</span>
+        <strong>Values and Personality</strong>
+        <p>I value reliability, curiosity, accountability, and helpful communication. My peer mentor role has shown me that strong engineering is not only about solving the problem, but also explaining the path clearly to others.</p>
+      </div>
+      <div class="goal-card reveal delay-4">
+        <span class="goal-num">04</span>
+        <strong>Building Credentials</strong>
+        <p>My credentials include course projects, independent software projects, 800+ unit tests on a scheduling system, technical support experience, and mentoring first-year engineering students.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
   <section id="projects">
     <div class="section-header reveal from-left">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title">Course Projects and Artifacts</h2>
       <div class="section-line"></div>
     </div>
     <div class="projects-grid">
@@ -731,6 +1041,12 @@
             <span class="tech-badge">Java Spring Boot</span><span class="tech-badge">Next.js</span>
             <span class="tech-badge">Gemini AI</span><span class="tech-badge">Replicate API</span>
             <span class="tech-badge">REST API</span>
+            <span class="tech-badge competency-badge">Design</span>
+            <span class="tech-badge competency-badge">Engineering Tools</span>
+            <span class="tech-badge competency-badge">Communication</span>
+          </div>
+          <div class="artifact-reflection">
+            <strong>Reflection:</strong> This project pushed me to connect backend architecture, external AI services, and user experience into one working product. I learned that technical design decisions affect user trust, especially when a system handles images and asynchronous AI output.
           </div>
         </div>
         <a href="https://github.com/Loveneek/Virtual-Wardrobe" target="_blank" class="project-link">View on GitHub ↗</a>
@@ -753,6 +1069,12 @@
             <span class="tech-badge">Java 23</span><span class="tech-badge">JavaFX</span>
             <span class="tech-badge">JUnit 5</span><span class="tech-badge">Clean Architecture</span>
             <span class="tech-badge">RBAC</span>
+            <span class="tech-badge competency-badge">Problem Analysis</span>
+            <span class="tech-badge competency-badge">Teamwork</span>
+            <span class="tech-badge competency-badge">Project Management</span>
+          </div>
+          <div class="artifact-reflection">
+            <strong>Reflection:</strong> The room scheduler taught me how much reliability depends on planning, tests, and clear boundaries between system layers. Writing a large test suite helped me see testing as an engineering habit, not only a final check.
           </div>
         </div>
         <a href="https://github.com/Loveneek/York-Room-Scheduler" target="_blank" class="project-link">View on GitHub ↗</a>
@@ -773,6 +1095,12 @@
           <div class="project-tech">
             <span class="tech-badge">Java</span><span class="tech-badge">Arduino</span>
             <span class="tech-badge">Firmata</span><span class="tech-badge">Embedded Systems</span>
+            <span class="tech-badge competency-badge">Investigation</span>
+            <span class="tech-badge competency-badge">Engineering Tools</span>
+            <span class="tech-badge competency-badge">Life-Long Learning</span>
+          </div>
+          <div class="artifact-reflection">
+            <strong>Reflection:</strong> This artifact helped me practice connecting software behaviour to physical inputs and outputs. I learned that hardware-oriented work requires patience, observation, and careful validation because real-world signals are less predictable than pure software.
           </div>
         </div>
         <a href="https://github.com/Loveneek" target="_blank" class="project-link">View GitHub ↗</a>
@@ -792,6 +1120,12 @@
           <div class="project-tech">
             <span class="tech-badge">MATLAB</span><span class="tech-badge">Sensors</span>
             <span class="tech-badge">Automation</span>
+            <span class="tech-badge competency-badge">Impact on Society and Environment</span>
+            <span class="tech-badge competency-badge">Ethics and Equity</span>
+            <span class="tech-badge competency-badge">Investigation</span>
+          </div>
+          <div class="artifact-reflection">
+            <strong>Reflection:</strong> The plant watering system made sustainability more concrete for me. A small automation project can still raise engineering questions about resource use, thresholds, sensor accuracy, and how design choices affect practical outcomes.
           </div>
         </div>
         <a href="https://github.com/Loveneek/Matlab-PlantWaterproject" target="_blank" class="project-link">View on GitHub ↗</a>
@@ -802,65 +1136,46 @@
 
   <div class="section-divider"></div>
 
-  <section id="experience">
+  <section id="reflections">
     <div class="section-header reveal from-left">
-      <h2 class="section-title">Experience</h2>
+      <h2 class="section-title">Reflections</h2>
       <div class="section-line"></div>
     </div>
-    <div class="exp-timeline">
-      <div class="exp-item reveal delay-1">
-        <div class="exp-dot" style="background: var(--accent2); box-shadow: 0 0 16px var(--accent2);"></div>
-        <div class="exp-header">
-          <div>
-            <div class="exp-role">Peer Mentor</div>
-            <div class="exp-company">Lassonde School of Engineering</div>
-          </div>
-          <div class="exp-date">2024 — Present</div>
-        </div>
-        <ul class="exp-list">
-          <li>Facilitating technical guidance for 30+ first-year students in Java and Data Structures.</li>
-          <li>Developing supplemental study materials to simplify complex algorithmic logic.</li>
-        </ul>
+    <p class="section-kicker reveal delay-1">Retell, Relate, Reflect</p>
+    <div class="reflection-grid">
+      <div class="reflection-card reveal delay-1">
+        <strong>EQ and Professional Growth</strong>
+        <p><strong>Retell:</strong> Through COOP 2100, I reflected on how I respond to pressure, feedback, and collaboration.</p>
+        <p><strong>Relate:</strong> Emotional intelligence connects directly to workplace readiness because technical work often happens inside teams, deadlines, and uncertainty.</p>
+        <p><strong>Reflect:</strong> I learned that I can strengthen my professional impact by listening first, asking better questions, and communicating progress earlier.</p>
       </div>
-
-      <div class="exp-item reveal delay-2" style="margin-top: 3rem;">
-        <div class="exp-dot"></div>
-        <div class="exp-header">
-          <div>
-            <div class="exp-role">Technical Support Specialist</div>
-            <div class="exp-company">Standard Broadband</div>
-          </div>
-          <div class="exp-date">May 2022 — Present</div>
-        </div>
-        <ul class="exp-list">
-          <li>Configuring and managing DNS records and Linux-based hosting systems.</li>
-          <li>Resolving complex connectivity issues across WAN, LAN, and firewall infrastructure.</li>
-          <li>Developing internal documentation for automated support workflows.</li>
-        </ul>
+      <div class="reflection-card reveal delay-2">
+        <strong>SMART Goals and Career Planning</strong>
+        <p><strong>Retell:</strong> I clarified my goal of preparing for software engineering co-op roles through project documentation, resume improvement, and skill development.</p>
+        <p><strong>Relate:</strong> SMART goals make career planning measurable instead of vague, which supports steady progress during the academic year.</p>
+        <p><strong>Reflect:</strong> I learned that career readiness is built through repeated small actions, not one large update before applications open.</p>
+      </div>
+      <div class="reflection-card reveal delay-3">
+        <strong>Sustainability and Ethics</strong>
+        <p><strong>Retell:</strong> My automation and AI projects encouraged me to think about data use, reliability, environmental impact, and user trust.</p>
+        <p><strong>Relate:</strong> These questions connect to the engineering competencies of ethics and equity, impact on society, and professionalism.</p>
+        <p><strong>Reflect:</strong> I learned that an engineer's responsibility includes asking who is affected by a design and what assumptions are built into the system.</p>
       </div>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <section id="education">
+  <section id="competencies">
     <div class="section-header reveal from-left">
-      <h2 class="section-title">Education</h2>
+      <h2 class="section-title">Competencies</h2>
       <div class="section-line"></div>
     </div>
-    <div class="edu-grid">
-      <div class="edu-card reveal scale-in">
-        <div class="edu-icon">🎓</div>
-        <div class="edu-degree">Bachelor of Engineering (Big Data)</div>
-        <div class="edu-school">York University · North York, ON</div>
-        <div class="edu-year">2023 — 2027 (Expected)</div>
-      </div>
-      <div class="edu-card reveal scale-in delay-2">
-        <div class="edu-icon">🖥️</div>
-        <div class="edu-degree">Computer System Technician</div>
-        <div class="edu-school">St. Clair College · Windsor, ON</div>
-        <div class="edu-year">2018 — 2019</div>
-      </div>
+    <p class="section-kicker reveal delay-1">Lassonde undergraduate competency tags used in this portfolio</p>
+    <div class="competency-grid">
+      <div class="competency-card reveal delay-1"><strong>Technical Competencies</strong> Knowledge Base for Engineering, Problem Analysis, Investigation, Design, and Use of Engineering Tools.</div>
+      <div class="competency-card reveal delay-2"><strong>Professional Competencies</strong> Individual and Teamwork, Communication Skills, Professionalism, Economics and Project Management.</div>
+      <div class="competency-card reveal delay-3"><strong>Impact Competencies</strong> Impact on Society and the Environment, Ethics and Equity, and Life-Long Learning.</div>
     </div>
   </section>
 
@@ -882,7 +1197,7 @@
   </section>
 
   <footer>
-    Built with <span>❤</span> by Loveneek Singh | 2026 Portfolio
+    Loveneek Singh | singhloveneek8@gmail.com | Last updated September 24, 2026 | Built with <span>❤</span>
   </footer>
 
   <script>
