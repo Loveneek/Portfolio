@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loveneek Singh — Portfolio</title>
+  <title>Loveneek Singh | ePortfolio</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307070f'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial' font-size='24' font-weight='700' fill='%23ff6b6b'%3ELS%3C/text%3E%3C/svg%3E" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
   <style>
@@ -12,7 +12,7 @@
       --card: #10101a;
       --border: #1e1e30;
       --text: #f0eeff;
-      --muted: #6e6e90;
+      --muted: #9a9ab8;
       --accent1: #ff6b6b;
       --accent2: #4ecdc4;
       --accent3: #ffe66d;
@@ -608,6 +608,12 @@
     .edu-school { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--accent4); margin-bottom: 0.5rem; }
     .edu-year { font-family: 'DM Mono', monospace; font-size: 0.76rem; color: var(--muted); }
 
+    .sub-title { font-size: 1.35rem; font-weight: 700; margin: 3.5rem 0 1.5rem; color: var(--text); }
+    .sub-title:first-of-type { margin-top: 0; }
+    .resume-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .about-text blockquote { border-left: 3px solid var(--accent3); padding: 0.6rem 1rem; margin: 0 0 1.2rem; color: var(--text); font-family: 'DM Mono', monospace; font-size: 0.92rem; font-style: italic; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
     /* ── CONTACT ── */
     #contact { text-align: center; }
     .contact-inner {
@@ -707,10 +713,9 @@
     <ul class="nav-links">
       <li><a href="#index">Index</a></li>
       <li><a href="#about">About Me</a></li>
-      <li><a href="#skills">Skills</a></li>
       <li><a href="#career">Career</a></li>
       <li><a href="#goals">Goals</a></li>
-      <li><a href="#projects">Artifacts</a></li>
+      <li><a href="#projects">Course Projects</a></li>
       <li><a href="#reflections">Reflections</a></li>
       <li><a href="#competencies">Competencies</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -723,13 +728,13 @@
       <h1 class="hero-name">
         <span class="name-color">Loveneek</span><br>Singh
       </h1>
-      <p class="hero-sub">Software Engineering Student &amp; <span>Co-op Candidate</span></p>
+      <p class="hero-sub">Software Engineering (Big Data) Student &amp; <span>Infrastructure Application Support Developer Co-op</span></p>
       <p class="hero-desc">
-        This ePortfolio connects my technical work, career goals, workplace experience, and reflective learning as I prepare for co-op and future engineering practice.
+        I bridge infrastructure and software: four years supporting networks and 500+ client environments, now building and fixing production applications at FGF Brands. This ePortfolio connects that experience with my projects, goals, and reflections.
       </p>
       <div class="hero-ctas">
         <a href="#index" class="btn btn-primary">View Portfolio Index ↓</a>
-        <a href="#projects" class="btn btn-ghost">Course Artifacts</a>
+        <a href="resume.pdf" target="_blank" class="btn btn-ghost">Resume (PDF)</a>
         <a href="https://github.com/Loveneek" target="_blank" class="btn btn-ghost">GitHub ↗</a>
       </div>
     </div>
@@ -756,7 +761,7 @@
       <a class="index-card reveal delay-2" href="#career">
         <span>B</span>
         <strong>Career</strong>
-        Education, paid and volunteer experience, technical skills, and resume snapshot.
+        Education, work and volunteer experience, technical skills, and downloadable resume.
       </a>
       <a class="index-card reveal delay-3" href="#goals">
         <span>C</span>
@@ -785,125 +790,29 @@
     </div>
     <div class="about-grid">
       <div class="about-text reveal from-left delay-1">
-        <p>I'm a <strong>Software Engineering (Big Data) student at York University</strong> with an expected graduation date of 2027. My academic and career interests sit at the intersection of backend architecture, AI integration, reliable systems, and practical user experience.</p>
-        <p>Currently, I'm on an <strong>Infrastructure Application Support Developer Co-op at FGF Brands</strong>, supporting business-critical applications built on ASP.NET, C#, and SQL Server. Previously, I built ETL pipelines and IoT dashboards as a <strong>Data Analyst Intern at Hydroficient</strong>, spent four years as an <strong>IT Support Specialist at Internet Access Solutions Ltd.</strong> managing DNS, network, and VOIP infrastructure, and served as a <strong>Peer Mentor at the Lassonde School of Engineering</strong>, providing technical guidance in Java and Data Structures to 30+ first-year students.</p>
-        <p>My co-op goal is to contribute to software engineering teams where I can keep developing technical depth, professional communication, and disciplined problem solving. This portfolio collects the evidence behind that goal: projects, experience, skills, reflections, and competency-tagged artifacts.</p>
+        <p>I'm Loveneek, a third-year <strong>Software Engineering student at York University's Lassonde School of Engineering</strong>, specializing in Big Data, and the first person in my family to attend university. My goal is to combine infrastructure and software: I want to build applications and understand the systems they run on.</p>
+        <p>I grew up in Dulwan, a village in rural Punjab, where opportunities did not come to you, so I learned to go looking for them. My biggest inspiration is my father, who left his studies to take charge of our family's fields, crops and dairy farm. His advice still drives how I work:</p>
+        <blockquote>"Get the best out of life. Do the things I never could."</blockquote>
+        <p>That push carried me to a Networking diploma at St. Clair College and <strong>four years in IT support</strong> across 500+ client environments, where I learned how infrastructure behaves under pressure and how to stay calm when people depend on it. I then wanted to build the software layer on top, so I chose Software Engineering at York. Today I am an <strong>Infrastructure Application Support Developer co-op at FGF Brands</strong>, after an analytics placement at Hydroficient.</p>
+        <p>My strengths are troubleshooting, staying calm under pressure, and learning independently. Outside work, I play and watch cricket, game on PlayStation, and travel.</p>
       </div>
       <div class="about-stats">
         <div class="stat-card reveal scale-in">
-          <div class="stat-num">800+</div>
-          <div class="stat-label">JUnit tests written</div>
+          <div class="stat-num">4 yrs</div>
+          <div class="stat-label">IT support experience</div>
         </div>
         <div class="stat-card reveal scale-in delay-1">
-          <div class="stat-num">Spring</div>
-          <div class="stat-label">Boot Backend Expert</div>
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Client environments supported</div>
         </div>
         <div class="stat-card reveal scale-in delay-2">
-          <div class="stat-num">30+</div>
-          <div class="stat-label">Students Mentored</div>
+          <div class="stat-num">~30%</div>
+          <div class="stat-label">Time saved for R&amp;D with a feature I built at FGF</div>
         </div>
         <div class="stat-card reveal scale-in delay-3">
-          <div class="stat-num">2027</div>
+          <div class="stat-num">2028</div>
           <div class="stat-label">Expected graduation</div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <section id="experience">
-    <div class="section-header reveal from-left">
-      <h2 class="section-title">Experience</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="exp-timeline">
-      <div class="exp-item reveal delay-1">
-        <div class="exp-dot" style="background: var(--accent4); box-shadow: 0 0 16px var(--accent4);"></div>
-        <div class="exp-header">
-          <div>
-            <div class="exp-role">Infrastructure Application Support Developer Co-op</div>
-            <div class="exp-company">FGF Brands</div>
-          </div>
-          <div class="exp-date">Sep 2026 — Present</div>
-        </div>
-        <ul class="exp-list">
-          <li>Supporting and maintaining 50+ business-critical in-house applications spanning supply chain and manufacturing logistics, built on ASP.NET (Web Forms/MVC), C#, and Microsoft SQL Server.</li>
-          <li>Diagnosing and resolving production bugs, and developing new features based on evolving business requirements, gaining hands-on experience in the full application support lifecycle.</li>
-          <li>Managing and resolving support tickets through the ticketing system, strengthening incident triage and stakeholder communication skills.</li>
-          <li>Working on-site in a cross-functional environment at a large-scale manufacturing company, collaborating with engineering and infrastructure teams on systems that directly support day-to-day operations.</li>
-        </ul>
-      </div>
-
-      <div class="exp-item reveal delay-1" style="margin-top: 3rem;">
-        <div class="exp-dot" style="background: var(--accent3); box-shadow: 0 0 16px var(--accent3);"></div>
-        <div class="exp-header">
-          <div>
-            <div class="exp-role">Data Analyst Intern — ETL &amp; Dashboard Development</div>
-            <div class="exp-company">Hydroficient Systems Ltd.</div>
-          </div>
-          <div class="exp-date">May 2026 — Aug 2026</div>
-        </div>
-        <ul class="exp-list">
-          <li>Took full ownership of analytics and dashboard development for Hydroficient's IoT sensor data platform, from raw data to final visualization.</li>
-          <li>Built ETL pipelines using Python and SQL to ingest and process IoT sensor telemetry data, and developed outlier detection methods to flag anomalies in sensor readings.</li>
-          <li>Designed and deployed interactive dashboards using Next.js and Vercel, giving stakeholders real-time visibility into sensor performance and trends.</li>
-        </ul>
-      </div>
-
-      <div class="exp-item reveal delay-1" style="margin-top: 3rem;">
-        <div class="exp-dot" style="background: var(--accent2); box-shadow: 0 0 16px var(--accent2);"></div>
-        <div class="exp-header">
-          <div>
-            <div class="exp-role">Peer Mentor</div>
-            <div class="exp-company">Lassonde School of Engineering</div>
-          </div>
-          <div class="exp-date">Sep 2024 — Apr 2025</div>
-        </div>
-        <ul class="exp-list">
-          <li>Facilitated technical guidance for 30+ first-year students in Java and Data Structures.</li>
-          <li>Developed supplemental study materials to simplify complex algorithmic logic.</li>
-        </ul>
-      </div>
-
-      <div class="exp-item reveal delay-2" style="margin-top: 3rem;">
-        <div class="exp-dot"></div>
-        <div class="exp-header">
-          <div>
-            <div class="exp-role">IT Support Specialist</div>
-            <div class="exp-company">Internet Access Solutions Ltd.</div>
-          </div>
-          <div class="exp-date">May 2022 — Apr 2026</div>
-        </div>
-        <ul class="exp-list">
-          <li>Managed DNS records and resolved email and network/routing issues for hosted customer domains, providing front-line technical support via phone, email, and ticketing system.</li>
-          <li>Maintained the VOIP network, including Hosted PBX, customer premise phone systems, and phone line gateways.</li>
-          <li>Provisioned hardware and built network links for new and upgrading customers, and maintained backup systems across all devices and nodes.</li>
-          <li>Monitored infrastructure proactively, diagnosed hardware/software/network issues, and maintained documentation on network and support processes.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <section id="education">
-    <div class="section-header reveal from-left">
-      <h2 class="section-title">Education</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="edu-grid">
-      <div class="edu-card reveal scale-in">
-        <div class="edu-icon">🎓</div>
-        <div class="edu-degree">Bachelor of Engineering (Big Data)</div>
-        <div class="edu-school">York University · North York, ON</div>
-        <div class="edu-year">2023 — 2027 (Expected)</div>
-      </div>
-      <div class="edu-card reveal scale-in delay-2">
-        <div class="edu-icon">🖥️</div>
-        <div class="edu-degree">Computer System Technician</div>
-        <div class="edu-school">St. Clair College · Windsor, ON</div>
-        <div class="edu-year">2018 — 2019</div>
       </div>
     </div>
   </section>
@@ -916,36 +825,102 @@
       <div class="section-line"></div>
     </div>
     <p class="section-kicker reveal delay-1">Education, experience, skills, and resume</p>
-    <div class="index-grid">
-      <div class="index-card reveal delay-1">
-        <span>01</span>
-        <strong>Education History</strong>
-        Bachelor of Engineering in Software Engineering (Big Data), York University, 2023 to 2027 expected. Computer System Technician, St. Clair College, 2018 to 2019.
-      </div>
-      <div class="index-card reveal delay-2">
-        <span>02</span>
-        <strong>Experience Record</strong>
-        Infrastructure Application Support Developer Co-op at FGF Brands (current), Data Analyst Intern at Hydroficient, IT Support Specialist at Internet Access Solutions Ltd., and Peer Mentor at Lassonde School of Engineering. Together these span application support, analytics and dashboard development, infrastructure/network support, and technical mentoring.
-      </div>
-      <div class="index-card reveal delay-3">
-        <span>03</span>
-        <strong>Career Direction</strong>
-        Seeking 2026 software engineering internship and co-op opportunities focused on backend systems, full-stack development, AI integration, infrastructure, and engineering reliability.
-      </div>
-    </div>
-    <div class="resume-card reveal delay-4">
+
+    <h3 class="sub-title reveal">Resume</h3>
+    <div class="resume-card reveal" style="margin-top:0">
       <strong>Resume Snapshot</strong>
-      Current resume focus: Java Spring Boot, Next.js/React, AI API integration, Linux systems, DNS management, testing, clean architecture, mentoring, and technical communication. Add a downloadable resume PDF here before final submission if your course site platform supports file uploads.
+      Infrastructure Application Support Developer co-op at FGF Brands (ASP.NET, C#, SQL Server, Power Automate), Data Analyst Intern at Hydroficient (Python, SQL, Next.js), and four years of IT support. Currently seeking 2027 software engineering and data internship opportunities.
+      <div class="resume-actions">
+        <a href="resume.pdf" target="_blank" class="btn btn-primary">View Resume (PDF)</a>
+        <a href="resume.pdf" download="Loveneek_Singh_Resume.pdf" class="btn btn-ghost">Download</a>
+      </div>
     </div>
-  </section>
 
-  <div class="section-divider"></div>
-
-  <section id="skills">
-    <div class="section-header reveal from-left">
-      <h2 class="section-title">Skills</h2>
-      <div class="section-line"></div>
+    <h3 class="sub-title reveal">Education</h3>
+    <div class="edu-grid">
+      <div class="edu-card reveal scale-in">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-degree">BEng, Software Engineering (Big Data)</div>
+        <div class="edu-school">York University, Lassonde · North York, ON</div>
+        <div class="edu-year">Sep 2023 – Apr 2028 (Expected) · Co-op stream</div>
+      </div>
+      <div class="edu-card reveal scale-in delay-2">
+        <div class="edu-icon">🖥️</div>
+        <div class="edu-degree">Computer Systems Technician: Networking</div>
+        <div class="edu-school">St. Clair College · Windsor, ON</div>
+        <div class="edu-year">Jan 2018 – Apr 2019 · GPA 3.8/4.0</div>
+      </div>
     </div>
+
+    <h3 class="sub-title reveal">Experience</h3>
+    <div class="exp-timeline">
+      <div class="exp-item reveal delay-1">
+        <div class="exp-dot" style="background: var(--accent4); box-shadow: 0 0 16px var(--accent4);"></div>
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Infrastructure Application Support Developer Co-op</div>
+            <div class="exp-company">FGF Brands</div>
+          </div>
+          <div class="exp-date">Aug 2026 – Present</div>
+        </div>
+        <ul class="exp-list">
+          <li>Maintaining and enhancing in-house supply chain and manufacturing applications from a portfolio of 50+ systems, built on ASP.NET (Web Forms/MVC), C#, and Microsoft SQL Server, with Azure Blob Storage and Power Automate integrations.</li>
+          <li>Built a one-click feature that lets the R&amp;D team reuse product images from older SKUs instead of re-uploading them, cutting the time to add new items to the website by about 30%.</li>
+          <li>Helped launch a Non-Conformance Report (NCR) form to production and resolved about 12 follow-up issues, including tracing intermittent email failures to a SQL parameter size limit and documenting the cause and prevention for business users.</li>
+          <li>Resolved 2 priority production issues and work directly with business users across operations and R&amp;D to gather requirements, confirm fixes, and document applications.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item reveal delay-1" style="margin-top: 3rem;">
+        <div class="exp-dot" style="background: var(--accent3); box-shadow: 0 0 16px var(--accent3);"></div>
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Data Analyst Intern, ETL &amp; Dashboard Development</div>
+            <div class="exp-company">Hydroficient</div>
+          </div>
+          <div class="exp-date">May 2026 – Aug 2026</div>
+        </div>
+        <ul class="exp-list">
+          <li>Built Python and SQL ETL pipelines on a six-person student team (CEWIL iHUB, YSpace Lassonde) to ingest and clean IoT telemetry from Hydroficient's water management devices.</li>
+          <li>Developed statistical outlier detection to flag anomalous sensor readings for operator review.</li>
+          <li>Designed and deployed a 7-page operator dashboard in Next.js on Vercel (KPIs, alerts, device drill-down, trend analytics) used with a pilot client, and fixed a deployment failure caused by build-time database queries.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item reveal delay-1" style="margin-top: 3rem;">
+        <div class="exp-dot" style="background: var(--accent2); box-shadow: 0 0 16px var(--accent2);"></div>
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Peer Mentor</div>
+            <div class="exp-company">Lassonde School of Engineering</div>
+          </div>
+          <div class="exp-date">Sep 2024 – Apr 2025</div>
+        </div>
+        <ul class="exp-list">
+          <li>Guided 30+ first-year students in Java and Data Structures.</li>
+          <li>Developed supplemental study materials to simplify complex algorithmic logic.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item reveal delay-2" style="margin-top: 3rem;">
+        <div class="exp-dot"></div>
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">IT Support Specialist</div>
+            <div class="exp-company">Internet Access Solutions Ltd.</div>
+          </div>
+          <div class="exp-date">May 2022 – Apr 2026</div>
+        </div>
+        <ul class="exp-list">
+          <li>Managed DNS records and resolved email and network/routing issues for hosted customer domains, providing front-line technical support via phone, email, and ticketing system.</li>
+          <li>Maintained the VOIP network, including Hosted PBX, customer premise phone systems, and phone line gateways.</li>
+          <li>Provisioned hardware and built network links for new and upgrading customers, and maintained backup systems across all devices and nodes.</li>
+          <li>Monitored 500+ client environments with Nagios and OpsGenie and resolved 20 to 30 support tickets per week; diagnosed hardware, software, and network issues and maintained documentation on network and support processes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-title reveal">Technical Skills</h3>
     <div class="skills-grid">
       <div class="skill-group reveal delay-1">
         <div class="skill-group-title">Languages</div>
@@ -960,7 +935,7 @@
         <div class="skill-group-title">Frameworks & AI</div>
         <div class="skill-tags">
           <span class="skill-tag">Spring Data JPA</span><span class="skill-tag">Next.js / React</span>
-          <span class="skill-tag">ASP.NET (Web Forms/MVC)</span><span class="skill-tag">Power BI</span>
+          <span class="skill-tag">ASP.NET (Web Forms/MVC)</span><span class="skill-tag">Power Automate</span><span class="skill-tag">Power BI</span>
           <span class="skill-tag">Gemini Pro API</span><span class="skill-tag">Replicate API</span>
           <span class="skill-tag">JUnit 5</span><span class="skill-tag">Express.js</span>
           <span class="skill-tag">Vercel</span><span class="skill-tag">Git</span><span class="skill-tag">Arduino</span>
@@ -970,7 +945,7 @@
         <div class="skill-group-title">Infrastructure & DevOps</div>
         <div class="skill-tags">
           <span class="skill-tag">Linux Systems</span><span class="skill-tag">DNS Management</span>
-          <span class="skill-tag">Azure</span><span class="skill-tag">Nagios Monitoring</span>
+          <span class="skill-tag">Azure Blob Storage</span><span class="skill-tag">Microsoft SQL Server</span><span class="skill-tag">OpsGenie</span><span class="skill-tag">Nagios Monitoring</span>
           <span class="skill-tag">Freshdesk</span><span class="skill-tag">Network Hardware</span><span class="skill-tag">SSL/TLS</span>
         </div>
       </div>
@@ -1021,7 +996,7 @@
 
   <section id="projects">
     <div class="section-header reveal from-left">
-      <h2 class="section-title">Course Projects and Artifacts</h2>
+      <h2 class="section-title">Course Projects</h2>
       <div class="section-line"></div>
     </div>
     <div class="projects-grid">
@@ -1034,8 +1009,8 @@
           </div>
           <p class="project-desc">An end-to-end AI-powered Virtual Try-On system. Users upload photos to see clothing garments realistically overlaid using generative AI and automated classification.</p>
           <ul class="project-highlights">
-            <li>Engineered a microservices backend with Java Spring Boot and Spring Data JPA</li>
-            <li>Integrated Gemini Pro Vision to automatically classify garment types with 95%+ accuracy</li>
+            <li>Built a Spring Boot REST API with JWT authentication and a normalized MySQL schema via Spring Data JPA</li>
+            <li>Integrated Google Gemini to automatically classify garment category and body-part placement</li>
             <li>Leveraged Replicate API for cloud-based image synthesis and realistic texture mapping</li>
             <li>Built a high-performance Next.js frontend to handle asynchronous AI generation tasks</li>
           </ul>
@@ -1060,12 +1035,12 @@
             <div class="project-icon">🏛️</div>
             <div class="project-name">York Room Scheduler</div>
           </div>
-          <p class="project-desc">A 3-layer university scheduling application with enterprise-grade architecture — built for conflict-free room bookings and role-based access.</p>
+          <p class="project-desc">A 3-layer university scheduling application for conflict-free room bookings with role-based access.</p>
           <ul class="project-highlights">
-            <li>Wrote 800+ JUnit tests including mutation testing for 100% logic validation</li>
+            <li>Wrote 800+ JUnit tests, including mutation testing, to validate booking and pricing logic</li>
             <li>Implemented complex pricing models and automated deposit/no-show detection</li>
             <li>Secure auth with institutional email validation and RBAC (Admin/Student/Faculty)</li>
-            <li>Separated concerns using a robust 3-Layer architecture (UI, Domain, Infrastructure)</li>
+            <li>Separated concerns using a 3-layer architecture (UI, Domain, Infrastructure)</li>
           </ul>
           <div class="project-tech">
             <span class="tech-badge">Java 23</span><span class="tech-badge">JavaFX</span>
@@ -1105,7 +1080,6 @@
             <strong>Reflection:</strong> This artifact helped me practice connecting software behaviour to physical inputs and outputs. I learned that hardware-oriented work requires patience, observation, and careful validation because real-world signals are less predictable than pure software.
           </div>
         </div>
-        <a href="https://github.com/Loveneek" target="_blank" class="project-link">View GitHub ↗</a>
       </div>
 
       <div class="project-card reveal delay-3">
@@ -1186,7 +1160,7 @@
   <section id="contact">
     <div class="contact-inner reveal scale-in">
       <h2 class="contact-title">Let's Connect</h2>
-      <p class="contact-sub">Open to Software Engineering Internships and Co-op roles for 2026.</p>
+      <p class="contact-sub">Open to software engineering and data internship opportunities for 2027.</p>
       <div class="contact-links">
         <a href="mailto:singhloveneek8@gmail.com" class="contact-link contact-link-email">
           ✉️ singhloveneek8@gmail.com
@@ -1199,7 +1173,7 @@
   </section>
 
   <footer>
-    Loveneek Singh | singhloveneek8@gmail.com | Last updated September 24, 2026 
+    Loveneek Singh | singhloveneek8@gmail.com | Last updated November 21, 2026 
   </footer>
 
   <script>
