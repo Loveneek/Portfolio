@@ -614,6 +614,15 @@
     .about-text blockquote { border-left: 3px solid var(--accent3); padding: 0.6rem 1rem; margin: 0 0 1.2rem; color: var(--text); font-family: 'DM Mono', monospace; font-size: 0.92rem; font-style: italic; }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 
+    .bridge-strip { display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin:0 0 2rem; opacity:0; animation: fadeUp 0.7s 0.6s forwards; }
+    .bridge-step { display:flex; align-items:center; gap:0.55rem; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:0.6rem 0.9rem; font-family:'DM Mono',monospace; font-size:0.8rem; color:var(--text); }
+    .bridge-step svg { width:22px; height:22px; flex:none; }
+    .bridge-arrow { color:var(--muted); font-size:1.1rem; }
+    .figure-card { margin-top:2.5rem; background:#fff; border-radius:16px; padding:1rem; border:1px solid var(--border); }
+    .figure-card img { width:100%; height:auto; display:block; border-radius:8px; }
+    .figure-cap { margin-top:0.75rem; color:var(--muted); font-family:'DM Mono',monospace; font-size:0.8rem; text-align:center; }
+    .vision-card { grid-column: 1 / -1; }
+
     /* ── CONTACT ── */
     #contact { text-align: center; }
     .contact-inner {
@@ -701,6 +710,7 @@
       .about-grid, .edu-grid { grid-template-columns: 1fr; }
       .project-card { grid-template-columns: 1fr; }
       .project-link { width: max-content; max-width: 100%; white-space: normal; }
+      .bridge-arrow { display: none; }
     }
   </style>
 </head>
@@ -728,9 +738,16 @@
       <h1 class="hero-name">
         <span class="name-color">Loveneek</span><br>Singh
       </h1>
-      <p class="hero-sub">Software Engineering (Big Data) Student &amp; <span>Infrastructure Application Support Developer Co-op</span></p>
+      <p class="hero-sub">I bridge <span>infrastructure</span> and <span>software</span>.</p>
+      <div class="bridge-strip" aria-label="Infrastructure to applications to people">
+        <div class="bridge-step"><svg viewBox="0 0 24 24" fill="none" stroke="#4ecdc4" stroke-width="2"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="12" r="3"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M7 7l3 3M17 7l-3 3M7 17l3-3M17 17l-3-3"/></svg>4 yrs IT &amp; networks</div>
+        <span class="bridge-arrow">→</span>
+        <div class="bridge-step"><svg viewBox="0 0 24 24" fill="none" stroke="#a29bfe" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10l-2 2 2 2M16 10l2 2-2 2M13 9l-2 6"/></svg>.NET, SQL &amp; data apps</div>
+        <span class="bridge-arrow">→</span>
+        <div class="bridge-step"><svg viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="2"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3 2.5-5 5-5s5 2 5 5M11 20c0-3 2.5-5 5-5s5 2 5 5"/></svg>People who rely on them</div>
+      </div>
       <p class="hero-desc">
-        I bridge infrastructure and software: four years supporting networks and 500+ client environments, now building and fixing production applications at FGF Brands. This ePortfolio connects that experience with my projects, goals, and reflections.
+        Software Engineering (Big Data) student at York and Infrastructure Application Support Developer co-op at FGF Brands, after four years supporting networks and 500+ client environments. This ePortfolio connects that experience with my projects, goals, and reflections.
       </p>
       <div class="hero-ctas">
         <a href="#index" class="btn btn-primary">View Portfolio Index ↓</a>
@@ -815,6 +832,10 @@
         </div>
       </div>
     </div>
+    <figure class="figure-card reveal">
+      <img src="images/vision.png" alt="Diagram: from my father's fields, to infrastructure, to applications, to the people they serve" loading="lazy">
+      <figcaption class="figure-cap">My path in one line: the crop rows of my father's fields become network links, the network carries the applications I build, and the line ends at the people they serve.</figcaption>
+    </figure>
   </section>
 
   <div class="section-divider"></div>
@@ -969,6 +990,11 @@
     </div>
     <p class="section-kicker reveal delay-1">Goal: Discover Myself</p>
     <div class="goal-grid">
+      <div class="goal-card vision-card reveal">
+        <span class="goal-num">★</span>
+        <strong>My Vision as an Engineer</strong>
+        <p>I want to be the engineer who builds the layer most people never see, the infrastructure and software underneath a business, and makes it so dependable and so clearly explained that the people who rely on it can trust it completely. At FGF, a feature I built saves our R&amp;D team about 30% of their time when adding new items; at Hydroficient, I helped build alerts that flag unusual water sensor readings before they become waste. That is the future I want to keep building: systems that give people their time back and use resources responsibly.</p>
+      </div>
       <div class="goal-card reveal delay-1">
         <span class="goal-num">01</span>
         <strong>Dreams and Goals</strong>
@@ -1173,7 +1199,7 @@
   </section>
 
   <footer>
-    Loveneek Singh | singhloveneek8@gmail.com | Last updated November 21, 2026 
+    Loveneek Singh | singhloveneek8@gmail.com | Last updated November 27, 2026 
   </footer>
 
   <script>
